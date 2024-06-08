@@ -2,21 +2,20 @@ package co.edu.uco.tutorspace.crosscutting.helpers;
 
 public final class ObjectHelper {
 
-	private static final ObjectHelper instance = new ObjectHelper();
-	
+	private static final ObjectHelper INSTANCE=new ObjectHelper();	
 	private ObjectHelper() {
 		super();
 	}
 	
 	public static final ObjectHelper getObjectHelper() {
-		return instance;
+		return INSTANCE;
 	}
 	
-	public final <T> boolean isNull(final T object) {
-		return object == null;
+	public  <O> boolean isNull( O objeto) {
+		return objeto==null;
 	}
 	
-	public final <T> T getDefault(final T object, final T defaultObject) {
-		return isNull(object) ? defaultObject : object;
+	public <O> O getDefaultValue( O objeto, O ValorDefecto) {
+		return isNull(objeto)? ValorDefecto : objeto;
 	}
 }

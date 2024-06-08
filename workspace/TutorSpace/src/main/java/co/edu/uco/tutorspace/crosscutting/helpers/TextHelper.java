@@ -2,8 +2,9 @@ package co.edu.uco.tutorspace.crosscutting.helpers;
 
 public final class TextHelper {
 
-	public static final String EMPTY = "";
-	
+	public static final String EMPTY="";
+	public static final String UNDERLINE="_";
+		
 	private TextHelper() {
 		super();
 	}
@@ -13,18 +14,38 @@ public final class TextHelper {
 	}
 	
 	public static final boolean isNullOrEmpty(final String string) {
-		return isNull(string) || EMPTY.equals(applyTrim(string));
+		return isNull(string)|| EMPTY.equals(applyTrim(string));
+	}
+	
+	public static final String getDefaultValue(final String string,final String defaultValue) {
+		return ObjectHelper.getObjectHelper().getDefaultValue(string, defaultValue);
+	}
+	
+	public static final String getDefaultValue(final String string) {
+		return getDefaultValue(string,EMPTY);
 	}
 	
 	public static final String applyTrim(final String string) {
-		return getDefault(string).trim();
+		return getDefaultValue(string).trim();
 	}
 	
-	public static final String getDefault(final String string, final String defaultValue) {
-		return ObjectHelper.getObjectHelper().getDefault(string, defaultValue);
+	public static final String concatenate(final String...strings) {
+		final var sb= new StringBuilder(EMPTY);
+		
+		if (!ObjectHelper.getObjectHelper().isNull(strings)) {
+			for (final var string : strings) {
+				sb.append(applyTrim(string));
+			}
+		}
+		
+		return sb.toString();
 	}
 	
-	public static final String getDefault(final String string) {
-		return getDefault(string, EMPTY);
+	public static String reemplazarParametro(String mensaje, String... parametros) { 
+		String mensajeReemplazado = mensaje; for(int i = 0; i< parametros.length; i++) {
+			String marcador = "$[" + (i+1) + "}"; 
+			mensajeReemplazado = mensajeReemplazado.replace(marcador, parametros[i]); 
+		}
+		return mensajeReemplazado;
 	}
 }
