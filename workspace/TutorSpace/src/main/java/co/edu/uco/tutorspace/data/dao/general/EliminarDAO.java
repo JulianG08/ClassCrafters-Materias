@@ -1,6 +1,7 @@
 package co.edu.uco.tutorspace.data.dao.general;
 
-public interface EliminarDAO {
+import java.sql.SQLException;
 
-	void eliminar(int id);
+public interface EliminarDAO {
+    void eliminar(int id) throws SQLException;
 }

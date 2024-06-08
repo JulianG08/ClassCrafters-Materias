@@ -6,42 +6,37 @@ import co.edu.uco.tutorspace.crosscutting.helpers.TextHelper;
 
 public class TutorSpaceException extends RuntimeException {
 
-	private static final long serialVersionUID = 1L;
-	protected String mensajeUsuario;
-	protected Lugar lugar;
-	
-	public TutorSpaceException(final String mensajeTecnico, final String mensajeUsuario, final Lugar lugar, final Throwable exceptionRaiz) {
-		super(mensajeTecnico, exceptionRaiz);
-		setMensajeUsuario(mensajeUsuario);
-		setLugar(lugar);
-	}
-	
-	public TutorSpaceException(final String mensajeUsuario, final Lugar lugar) {
-			super(mensajeUsuario);
-			setMensajeUsuario(mensajeUsuario);
-			setLugar(lugar);
-		}
-	
-	public TutorSpaceException(final String mensajeTecnico, final String mensajeUsuario, final Lugar lugar ) {
-		super(mensajeUsuario);
-		setMensajeUsuario(mensajeUsuario);
-		setLugar(lugar);
-	}
+    private static final long serialVersionUID = 1L;
+    private final String mensajeUsuario;
+    private final Lugar lugar;
 
-	private final void setMensajeUsuario(final String mensajeUsuario) {
-		this.mensajeUsuario =TextHelper.applyTrim(mensajeUsuario);
-	}
+    public TutorSpaceException(String mensajeTecnico, String mensajeUsuario, Lugar lugar, Throwable excepcionRaiz) {
+        super(mensajeTecnico, excepcionRaiz);
+        this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
+        this.lugar = ObjectHelper.getObjectHelper().getDefaultValue(lugar, Lugar.DEFAULT);
+    }
 
-	private final void setLugar(final Lugar lugar) {
-		this.lugar = ObjectHelper.getObjectHelper().getDefaultValue(lugar, Lugar.DEFAULT);
-		
-	}
+    public TutorSpaceException(String mensajeUsuario, Lugar lugar) {
+        super(mensajeUsuario);
+        this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
+        this.lugar = ObjectHelper.getObjectHelper().getDefaultValue(lugar, Lugar.DEFAULT);
+    }
 
-	public final String getMensajeUsuario() {
-		return mensajeUsuario;
-	}
+    public TutorSpaceException(String mensajeTecnico, String mensajeUsuario, Lugar lugar) {
+        super(mensajeTecnico);
+        this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
+        this.lugar = ObjectHelper.getObjectHelper().getDefaultValue(lugar, Lugar.DEFAULT);
+    }
 
-	public final Lugar getLugar() {
-		return lugar;
-	}
+    public String getMensajeUsuario() {
+        return mensajeUsuario;
+    }
+
+    public Lugar getLugar() {
+        return lugar;
+    }
+
+    public static TutorSpaceException buildDatabaseException(String mensajeTecnico, String mensajeUsuario, Throwable excepcionRaiz) {
+        return new TutorSpaceException(mensajeTecnico, mensajeUsuario, Lugar.BASE_DE_DATOS, excepcionRaiz);
+    }
 }

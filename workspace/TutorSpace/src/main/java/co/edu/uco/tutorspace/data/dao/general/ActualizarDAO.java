@@ -1,6 +1,7 @@
 package co.edu.uco.tutorspace.data.dao.general;
 
-public interface ActualizarDAO<E> {
+import java.sql.SQLException;
 
-	void actualizar(E entidad);
+public interface ActualizarDAO<E> {
+    void actualizar(E entidad) throws SQLException;
 }
