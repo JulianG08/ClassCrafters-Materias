@@ -13,19 +13,19 @@ public class TutorSpaceException extends RuntimeException {
     public TutorSpaceException(String mensajeTecnico, String mensajeUsuario, Lugar lugar, Throwable excepcionRaiz) {
         super(mensajeTecnico, excepcionRaiz);
         this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
-        this.lugar = ObjectHelper.getObjectHelper().getDefault(lugar, Lugar.DEFAULT);
+        this.lugar = ObjectHelper.getObjectHelper().getDefaultValue(lugar, Lugar.DEFAULT);
     }
 
-    public TutorSpaceException(final String mensajeUsuario, final Lugar lugar) {
+    public TutorSpaceException(String mensajeUsuario, Lugar lugar) {
         super(mensajeUsuario);
         this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
-        this.lugar = ObjectHelper.getObjectHelper().getDefault(lugar, Lugar.DEFAULT);
+        this.lugar = ObjectHelper.getObjectHelper().getDefaultValue(lugar, Lugar.DEFAULT);
     }
 
     public TutorSpaceException(String mensajeTecnico, String mensajeUsuario, Lugar lugar) {
         super(mensajeTecnico);
         this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
-        this.lugar = ObjectHelper.getObjectHelper().getDefault(lugar, Lugar.DEFAULT);
+        this.lugar = ObjectHelper.getObjectHelper().getDefaultValue(lugar, Lugar.DEFAULT);
     }
 
     public String getMensajeUsuario() {
@@ -40,4 +40,3 @@ public class TutorSpaceException extends RuntimeException {
         return new TutorSpaceException(mensajeTecnico, mensajeUsuario, Lugar.BASE_DE_DATOS, excepcionRaiz);
     }
 }
-
