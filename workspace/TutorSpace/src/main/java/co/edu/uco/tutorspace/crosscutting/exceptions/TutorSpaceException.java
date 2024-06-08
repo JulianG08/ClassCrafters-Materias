@@ -6,41 +6,38 @@ import co.edu.uco.tutorspace.crosscutting.helpers.TextHelper;
 
 public class TutorSpaceException extends RuntimeException {
 
-	private static final long serialVersionUID = 1L;
-	protected String mensajeUsuario;
-	protected Lugar lugar;
+    private static final long serialVersionUID = 1L;
+    private final String mensajeUsuario;
+    private final Lugar lugar;
 
-	public TutorSpaceException(String mensajeTecnico, String mensajeUsuario, Lugar lugar, Throwable excepcionRaiz) {
-		super(mensajeTecnico, excepcionRaiz);
-		setMensajeUsuario(mensajeUsuario);
-		setLugar(lugar);
-	}
+    public TutorSpaceException(String mensajeTecnico, String mensajeUsuario, Lugar lugar, Throwable excepcionRaiz) {
+        super(mensajeTecnico, excepcionRaiz);
+        this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
+        this.lugar = ObjectHelper.getObjectHelper().getDefault(lugar, Lugar.DEFAULT);
+    }
 
-	public TutorSpaceException(final String mensajeUsuario, final Lugar lugar) {
-		super(mensajeUsuario);
-		setMensajeUsuario(mensajeUsuario);
-		setLugar(lugar);
-	}
+    public TutorSpaceException(final String mensajeUsuario, final Lugar lugar) {
+        super(mensajeUsuario);
+        this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
+        this.lugar = ObjectHelper.getObjectHelper().getDefault(lugar, Lugar.DEFAULT);
+    }
 
-	public TutorSpaceException(String mensajeTecnico, String mensajeUsuario, Lugar lugar) {
-		super(mensajeTecnico);
-		setMensajeUsuario(mensajeUsuario);
-		setLugar(lugar);
-	}
+    public TutorSpaceException(String mensajeTecnico, String mensajeUsuario, Lugar lugar) {
+        super(mensajeTecnico);
+        this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
+        this.lugar = ObjectHelper.getObjectHelper().getDefault(lugar, Lugar.DEFAULT);
+    }
 
-	private final void setMensajeUsuario(final String mensajeUsuario) {
-		this.mensajeUsuario = TextHelper.applyTrim(mensajeUsuario);
-	}
+    public String getMensajeUsuario() {
+        return mensajeUsuario;
+    }
 
-	private final void setLugar(final Lugar lugar) {
-		this.lugar = ObjectHelper.getObjectHelper().getDefault(lugar, Lugar.DEFAULT);
-	}
+    public Lugar getLugar() {
+        return lugar;
+    }
 
-	public final String getMensajeUsuario() {
-		return mensajeUsuario;
-	}
-
-	public final Lugar getLugar() {
-		return lugar;
-	}
+    public static TutorSpaceException buildDatabaseException(String mensajeTecnico, String mensajeUsuario, Throwable excepcionRaiz) {
+        return new TutorSpaceException(mensajeTecnico, mensajeUsuario, Lugar.BASE_DE_DATOS, excepcionRaiz);
+    }
 }
+

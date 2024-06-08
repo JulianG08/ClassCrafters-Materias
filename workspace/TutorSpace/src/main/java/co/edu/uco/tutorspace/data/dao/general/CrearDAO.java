@@ -1,6 +1,7 @@
 package co.edu.uco.tutorspace.data.dao.general;
 
-public interface CrearDAO<E> {
+import java.sql.SQLException;
 
-	void crear(E entidad);
+public interface CrearDAO<E> {
+    void crear(E entidad) throws SQLException;
 }
