@@ -1,30 +1,33 @@
 package co.edu.uco.tutorspace.data.dao.sql;
 
-import co.edu.uco.tutorspace.crosscutting.helpers.SqlHelper;
-
 import java.sql.Connection;
+
+import co.edu.uco.tutorspace.crosscutting.exceptions.customs.DataTutorSpaceException;
+import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.MessageCatalogStrategy;
+import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.data.CodigoMensaje;
+import co.edu.uco.tutorspace.crosscutting.helpers.SqlHelper;
 
 public class SqlConnection {
 
-	private Connection connection;
+	private Connection conexion;
 
-	protected SqlConnection(final Connection connection) {
-		if (connection == null) {
-			throw new NullPointerException("The connection is null");
-		}
-		this.connection = connection;
+	protected SqlConnection(final Connection conexion) {
+		setConexion(conexion);
+	}
+	
+	protected SqlConnection() {
+		super();
+	}
+	protected final Connection getConexion() {
+		return conexion;
 	}
 
-	protected Connection getConnection() {
-		return connection;
-	}
-
-	private void setConnection(final Connection connection) {
-		if (SqlHelper.isOpen(connection)) {
+	protected final void setConexion(final Connection conexion) {
+		if (!SqlHelper.isOpen(conexion)) {
 			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00002);
-			var mensajeTecnico = "No es posible crear el DAO deseado, dado que la conexion SQL esta cerrada";
-			throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario);
+			var mensajeTecnico = "No es posible crear el DAO deseado con una conexión cerrada";
+			throw new DataTutorSpaceException(mensajeTecnico,mensajeUsuario);
 		}
-		this.connection = connection;
+		this.conexion = conexion;
 	}
 }
