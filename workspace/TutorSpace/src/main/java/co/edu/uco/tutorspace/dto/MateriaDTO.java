@@ -1,10 +1,13 @@
 package co.edu.uco.tutorspace.dto;
 
+import java.util.UUID;
+
 import co.edu.uco.tutorspace.crosscutting.helpers.TextHelper;
+import co.edu.uco.tutorspace.crosscutting.helpers.UUIDHelper;
 
 public final class MateriaDTO {
 
-	private int id;
+	private UUID id;
 	private String nombre;
 	private String institucion;
 	
@@ -13,7 +16,7 @@ public final class MateriaDTO {
 		setInstitucion(TextHelper.EMPTY);
 	}
 	
-	public MateriaDTO(final int id, final String nombre, final String institucion) {
+	public MateriaDTO(final UUID id, final String nombre, final String institucion) {
 		setId(id);
 		setNombre(nombre);
 		setInstitucion(institucion);
@@ -23,12 +26,12 @@ public final class MateriaDTO {
 		return new MateriaDTO();
 	}
 	
-	public final int getId() {
+	public final UUID getId() {
 		return id;
 	}
 	
-	public final MateriaDTO setId(final int id) {
-		this.id = id;
+	public final MateriaDTO setId(final UUID id) {
+		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
 		return this;
 	}
 	
