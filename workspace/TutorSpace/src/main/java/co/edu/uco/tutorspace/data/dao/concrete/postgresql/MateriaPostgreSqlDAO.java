@@ -108,9 +108,52 @@ public class MateriaPostgreSqlDAO extends SqlConnection implements MateriaDAO {
 
     @Override
     public void actualizar(MateriaEntity data) {
+        final StringBuilder sentenciaSql = new StringBuilder();
+
+        sentenciaSql.append("UPDATE Materia ");
+        sentenciaSql.append("SET nombre = ?, institucion = ? ");
+        sentenciaSql.append("WHERE id = ?");
+
+        try (final PreparedStatement sentenciaSqlPreparada = getConexion().prepareStatement(sentenciaSql.toString())) {
+
+            sentenciaSqlPreparada.setString(1, data.getNombre());
+            sentenciaSqlPreparada.setString(2, data.getInstitucion());
+            sentenciaSqlPreparada.setObject(3, data.getId());
+
+            sentenciaSqlPreparada.executeUpdate();
+
+        } catch (final SQLException excepcion) {
+            var mensajeUsuario = TextHelper.reemplazarParametro(MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00039), data.getNombre());
+            var mensajeTecnico = TextHelper.reemplazarParametro(MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00040, data.getNombre()));
+            throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario, excepcion);
+        } catch (final Exception excepcion) {
+            var mensajeUsuario = TextHelper.reemplazarParametro(MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00041), data.getNombre());
+            var mensajeTecnico = TextHelper.reemplazarParametro(MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00042), data.getNombre());
+            throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario, excepcion);
+        }
     }
 
     @Override
     public void eliminar(MateriaEntity data) {
+        final StringBuilder sentenciaSql = new StringBuilder();
+
+        sentenciaSql.append("DELETE FROM Materia ");
+        sentenciaSql.append("WHERE id = ?");
+
+        try (final PreparedStatement sentenciaSqlPreparada = getConexion().prepareStatement(sentenciaSql.toString())) {
+
+            sentenciaSqlPreparada.setObject(1, data.getId());
+
+            sentenciaSqlPreparada.executeUpdate();
+
+        } catch (final SQLException excepcion) {
+            var mensajeUsuario = TextHelper.reemplazarParametro(MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00043), data.getNombre());
+            var mensajeTecnico = TextHelper.reemplazarParametro(MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00044, data.getNombre()));
+            throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario, excepcion);
+        } catch (final Exception excepcion) {
+            var mensajeUsuario = TextHelper.reemplazarParametro(MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00045), data.getNombre());
+            var mensajeTecnico = TextHelper.reemplazarParametro(MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00046), data.getNombre());
+            throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario, excepcion);
+        }
     }
 }
