@@ -12,6 +12,8 @@ public final class MateriaDTO {
 	private String institucion;
 	
 	public MateriaDTO() {
+		super();
+		setId(UUIDHelper.getDefault());
 		setNombre(TextHelper.EMPTY);
 		setInstitucion(TextHelper.EMPTY);
 	}
@@ -25,6 +27,11 @@ public final class MateriaDTO {
 	public static final MateriaDTO build() {
 		return new MateriaDTO();
 	}
+	
+	public static MateriaDTO fromString(String value) {
+        UUID id = UUID.fromString(value);
+        return new MateriaDTO(id, TextHelper.EMPTY, TextHelper.EMPTY);
+    }
 	
 	public final UUID getId() {
 		return id;
