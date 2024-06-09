@@ -39,13 +39,13 @@ public class MateriaPostgreSqlDAO extends SqlConnection implements MateriaDAO {
 			sentenciaSQLPreparada.executeUpdate();
 			
 		} catch (final SQLException excepcion) {
-			var mensajeUsuario = "Se ha presentado un problema tratando de crear la Ciudad \"${1}\", por favor intente de nuevo y si el problema persiste contacte al administrador...";
-			var mensajeTecnico = "Se ha presentado una excepcion de tipo SQLexception tatando de realizar el insert de la ciudad \"${1}\" en la tabla pais" + "de la base de datos azureSql.para mas detalles revise de forma completa la excepcionRaiz presentada ";
+			var mensajeUsuario = "Se ha presentado un problema tratando de crear la materia \"${1}\", por favor intente de nuevo y si el problema persiste contacte al administrador...";
+			var mensajeTecnico = "Se ha presentado una excepcion de tipo SQLexception tatando de realizar el insert de la materia \"${1}\" en la tabla Materia" + "de la base de datos postgreSql.para mas detalles revise de forma completa la excepcionRaiz presentada ";
 			throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario,excepcion);
 			
 		} catch (final Exception excepcion) {
-			var mensajeUsuario = "se ha presentado un problema tratando de crear la ciudad \"${1}\" y si el problemas contacte a el administrador ...";
-			var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el insert de la ciudad \"${1}\" en la tabla pais" + "de la base de datos azureSql.para mas detalles revise de forma completa la excepcionRaiz presentada ";
+			var mensajeUsuario = "se ha presentado un problema tratando de crear la materia \"${1}\" y si el problemas contacte a el administrador ...";
+			var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el insert de la materia \"${1}\" en la tabla materia" + "de la base de datos postgreSql.para mas detalles revise de forma completa la excepcionRaiz presentada ";
 			throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario,excepcion);
 		}
 		
@@ -93,13 +93,13 @@ public class MateriaPostgreSqlDAO extends SqlConnection implements MateriaDAO {
 	        }
 
 	    } catch (final SQLException excepcion) {
-	        var mensajeUsuario = "Se ha presentado un problema tratando de consultar las ciudades. Por favor, contacte al administrador del sistema.";
-	        var mensajeTecnico = "Se ha presentado una SQLException tratando de realizar la consulta de las ciudades en la tabla \"Ciudad\" de la base de datos Azure SQL.";
+	        var mensajeUsuario = "Se ha presentado un problema tratando de consultar las materias. Por favor, contacte al administrador del sistema.";
+	        var mensajeTecnico = "Se ha presentado una SQLException tratando de realizar la consulta de las materias en la tabla \"Materia\" de la base de datos postgreSQL.";
 	        throw new DataTutorSpaceException(mensajeUsuario, mensajeTecnico, excepcion);
 
 	    } catch (final Exception excepcion) {
-	        var mensajeUsuario = "Se ha presentado un problema tratando de consultar las ciudades. Por favor, contacte al administrador del sistema.";
-	        var mensajeTecnico = "Se ha presentado un problema INESPERADO con una excepción de tipo Exception tratando de realizar la consulta de las ciudades en la tabla \"Ciudad\" de la base de datos Azure SQL.";
+	        var mensajeUsuario = "Se ha presentado un problema tratando de consultar las materias. Por favor, contacte al administrador del sistema.";
+	        var mensajeTecnico = "Se ha presentado un problema INESPERADO con una excepción de tipo Exception tratando de realizar la consulta de las materias en la tabla \"Materia\" de la base de datos postgreSQL.";
 	        throw new DataTutorSpaceException(mensajeUsuario, mensajeTecnico, excepcion);
 	    }
 
@@ -120,13 +120,13 @@ public class MateriaPostgreSqlDAO extends SqlConnection implements MateriaDAO {
 			sentenciaSQLPreparada.executeUpdate();
 			
 		}catch (final SQLException excepcion) {
-			var mensajeUsuario = "se ha presentado un prblemao tratando de modificar la ciudad \\\"${1}\\\" y si el problemas contacte a el administrador ...";
-			var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el update de la ciudad \"${1}\" en la tabla pais" + "de la base de datos azureSql.para mas detalles revise de forma completa la excepcionRaiz presentada ";
+			var mensajeUsuario = "se ha presentado un prblema tratando de modificar la materia \\\"${1}\\\" y si el problemas contacte a el administrador ...";
+			var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el update de la materia \"${1}\" en la tabla Materia" + "de la base de datos postgreSql para mas detalles revise de forma completa la excepcionRaiz presentada ";
 			throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario,excepcion);
 			
 		}catch (final Exception excepcion) {
-			var mensajeUsuario = "se ha presentado un problema tratando de modificar la ciudad \"${1}\" y si el problemas contacte a el administrador ...";
-			var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el update de la ciudad \"${1}\" en la tabla pais" + "de la base de datos azureSql.para mas detalles revise de forma completa la excepcionRaiz presentada ";
+			var mensajeUsuario = "se ha presentado un problema tratando de modificar la materia \"${1}\" y si el problemas contacte a el administrador ...";
+			var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el update de la materia \"${1}\" en la tabla Materia" + "de la base de datos postgreSql.para mas detalles revise de forma completa la excepcionRaiz presentada ";
 			throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario,excepcion);
 		
 		}
@@ -143,13 +143,13 @@ public class MateriaPostgreSqlDAO extends SqlConnection implements MateriaDAO {
 
             sentenciaSQLPreparada.executeUpdate();
         } catch(final SQLException excepcion) {
-            var mensajeUsuario = "se ha presentado un prblemao tratando de eliminar la ciudad \"${1}\" y si el problemas contacte a el administrador ...";
-            var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el delete de la ciudad \\\"${1}\\\" en la tabla pais\"\r\n" + "+ \"de la base de datos azureSql.para mas detalles revise de forma completa la excepcionRaiz presentada";
+            var mensajeUsuario = "se ha presentado un prblemao tratando de eliminar la materia \"${1}\" y si el problemas contacte a el administrador ...";
+            var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el delete de la materia \\\"${1}\\\" en la tabla Materia\"\r\n" + "+ \"de la base de datos postgreSql.para mas detalles revise de forma completa la excepcionRaiz presentada";
             throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario);
 
         } catch(final Exception excepcion) {
-            var mensajeUsuario = "\"se ha presentado un prblema tratando de eliminar la ciudad \\\"${1}\\\" y si el problemas contacte a el administrador ...\"";
-            var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el delete de la ciudad \"${1}\" en la tabla pais" + "de la base de datos azureSql.para mas detalles revise de forma completa la excepcionRaiz presentada ";
+            var mensajeUsuario = "\"se ha presentado un prblema tratando de eliminar la materia \\\"${1}\\\" y si el problemas contacte a el administrador ...\"";
+            var mensajeTecnico = "Se ha presentado una excepcion se tipo SQLexception tatando de realizar el delete de la materia \"${1}\" en la tabla Materia" + "de la base de datos postgreSql.para mas detalles revise de forma completa la excepcionRaiz presentada ";
             throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario);
         }
     }
