@@ -23,11 +23,7 @@ public final class MateriaEntity {
         setInstitucion(institucion);
     }
 
-    public static MateriaEntity build(UUID id, String nombre, String institucion) {
-        return new MateriaEntity(id, nombre, institucion);
-    }
-
-    public static MateriaEntity build() {
+    public MateriaEntity build() {
         return new MateriaEntity();
     }
 

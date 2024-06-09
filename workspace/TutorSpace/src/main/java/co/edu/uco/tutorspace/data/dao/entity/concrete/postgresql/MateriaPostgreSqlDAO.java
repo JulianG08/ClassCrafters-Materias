@@ -1,4 +1,4 @@
-package co.edu.uco.tutorspace.data.dao.concrete.postgresql;
+package co.edu.uco.tutorspace.data.dao.entity.concrete.postgresql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,8 +14,8 @@ import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.data.CodigoM
 import co.edu.uco.tutorspace.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.tutorspace.crosscutting.helpers.TextHelper;
 import co.edu.uco.tutorspace.crosscutting.helpers.UUIDHelper;
-import co.edu.uco.tutorspace.data.dao.concrete.SqlConnection;
 import co.edu.uco.tutorspace.data.dao.entity.MateriaDAO;
+import co.edu.uco.tutorspace.data.dao.entity.concrete.SqlConnection;
 import co.edu.uco.tutorspace.entity.MateriaEntity;
 
 public class MateriaPostgreSqlDAO extends SqlConnection implements MateriaDAO {

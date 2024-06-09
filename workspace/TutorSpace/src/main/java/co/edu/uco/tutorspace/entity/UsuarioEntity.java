@@ -33,9 +33,7 @@ public final class UsuarioEntity {
         setInstitucion(TextHelper.EMPTY);
     }
 
-    public UsuarioEntity(final UUID id, final String nombre, final String apellido, final String tipoDocumento,
-                         final Long numeroDocumento, final String tipoUsuario, final String correoElectronico,
-                         final String clave, final String telefono, final String direccion, final String institucion) {
+    public UsuarioEntity(final UUID id, final String nombre, final String apellido, final String tipoDocumento, final Long numeroDocumento, final String tipoUsuario, final String correoElectronico, final String clave, final String telefono, final String direccion, final String institucion) {
         setId(id);
         setNombre(nombre);
         setApellido(apellido);
