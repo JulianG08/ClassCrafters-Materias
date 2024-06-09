@@ -1,4 +1,4 @@
-package co.edu.uco.tutorspace.data.dao.concrete;
+package co.edu.uco.tutorspace.data.dao.entity.concrete;
 
 import java.sql.Connection;
 
