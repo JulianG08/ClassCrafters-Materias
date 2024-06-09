@@ -1,4 +1,4 @@
-package co.edu.uco.tutorspace.data.dao.sql;
+package co.edu.uco.tutorspace.data.dao.concrete;
 
 import java.sql.Connection;
 
@@ -25,7 +25,7 @@ public class SqlConnection {
 	protected final void setConexion(final Connection conexion) {
 		if (!SqlHelper.isOpen(conexion)) {
 			var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00002);
-			var mensajeTecnico = "No es posible crear el DAO deseado con una conexión cerrada";
+			var mensajeTecnico = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00026);
 			throw new DataTutorSpaceException(mensajeTecnico,mensajeUsuario);
 		}
 		this.conexion = conexion;
