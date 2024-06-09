@@ -1,4 +1,4 @@
-package co.edu.uco.tutorspace.data.dao;
+package co.edu.uco.tutorspace.data.dao.entity;
 
 public interface EliminarDAO <E> {
 

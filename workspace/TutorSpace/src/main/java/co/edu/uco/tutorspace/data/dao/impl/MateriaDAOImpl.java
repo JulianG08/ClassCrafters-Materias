@@ -1,9 +1,9 @@
 package co.edu.uco.tutorspace.data.dao.impl;
 
-import co.edu.uco.tutorspace.data.dao.MateriaDAO;
 import co.edu.uco.tutorspace.entity.MateriaEntity;
 import co.edu.uco.tutorspace.crosscutting.exceptions.customs.DataTutorSpaceException;
 import co.edu.uco.tutorspace.crosscutting.helpers.TextHelper;
+import co.edu.uco.tutorspace.data.dao.entity.MateriaDAO;
 import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.MessageCatalogStrategy;
 import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.data.CodigoMensaje;
 

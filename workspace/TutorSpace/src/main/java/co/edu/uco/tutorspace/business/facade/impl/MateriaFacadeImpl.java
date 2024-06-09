@@ -6,7 +6,7 @@ import co.edu.uco.tutorspace.business.facade.MateriaFacade;
 import co.edu.uco.tutorspace.crosscutting.exceptions.TutorSpaceException;
 import co.edu.uco.tutorspace.crosscutting.exceptions.enums.Lugar;
 import co.edu.uco.tutorspace.crosscutting.helpers.TextHelper;
-import co.edu.uco.tutorspace.data.dao.MateriaDAO;
+import co.edu.uco.tutorspace.data.dao.entity.MateriaDAO;
 import co.edu.uco.tutorspace.data.dao.impl.MateriaDAOImpl;
 import co.edu.uco.tutorspace.dto.MateriaDTO;
 import co.edu.uco.tutorspace.entity.MateriaEntity;

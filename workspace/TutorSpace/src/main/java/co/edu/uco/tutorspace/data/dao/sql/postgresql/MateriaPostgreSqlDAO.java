@@ -12,7 +12,7 @@ import co.edu.uco.tutorspace.crosscutting.exceptions.customs.DataTutorSpaceExcep
 import co.edu.uco.tutorspace.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.tutorspace.crosscutting.helpers.TextHelper;
 import co.edu.uco.tutorspace.crosscutting.helpers.UUIDHelper;
-import co.edu.uco.tutorspace.data.dao.MateriaDAO;
+import co.edu.uco.tutorspace.data.dao.entity.MateriaDAO;
 import co.edu.uco.tutorspace.data.dao.sql.SqlConnection;
 import co.edu.uco.tutorspace.entity.MateriaEntity;
 

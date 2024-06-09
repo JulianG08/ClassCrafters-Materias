@@ -2,7 +2,8 @@ package co.edu.uco.tutorspace.crosscutting.helpers;
 
 public final class ObjectHelper {
 
-	private static final ObjectHelper INSTANCE=new ObjectHelper();	
+	private static final ObjectHelper INSTANCE = new ObjectHelper();	
+	
 	private ObjectHelper() {
 		super();
 	}
@@ -12,10 +13,10 @@ public final class ObjectHelper {
 	}
 	
 	public  <O> boolean isNull( O objeto) {
-		return objeto==null;
+		return objeto == null;
 	}
 	
-	public <O> O getDefaultValue( O objeto, O ValorDefecto) {
-		return isNull(objeto)? ValorDefecto : objeto;
+	public <O> O getDefaultValue( O objeto, O valorDefecto) {
+		return isNull(objeto)? valorDefecto : objeto;
 	}
 }
