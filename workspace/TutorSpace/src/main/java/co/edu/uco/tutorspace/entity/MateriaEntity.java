@@ -7,50 +7,54 @@ import co.edu.uco.tutorspace.crosscutting.helpers.UUIDHelper;
 
 public final class MateriaEntity {
 
-	private UUID id;
-	private String nombre;
-	private String institucion;
+    private UUID id;
+    private String nombre;
+    private String institucion;
 
-	public MateriaEntity() {
-		setId(UUIDHelper.getDefault());
-		setNombre(TextHelper.EMPTY);
-		setInstitucion(TextHelper.EMPTY);
-	}
+    public MateriaEntity() {
+        setId(UUIDHelper.getDefault());
+        setNombre(TextHelper.EMPTY);
+        setInstitucion(TextHelper.EMPTY);
+    }
 
-	public MateriaEntity(final UUID id, final String nombre, final String institucion) {
-		setId(id);
-		setNombre(nombre);
-		setInstitucion(institucion);
-	}
+    public MateriaEntity(final UUID id, final String nombre, final String institucion) {
+        setId(id);
+        setNombre(nombre);
+        setInstitucion(institucion);
+    }
 
-	public static final MateriaEntity build() {
-		return new MateriaEntity();
-	}
+    public static MateriaEntity build(UUID id, String nombre, String institucion) {
+        return new MateriaEntity(id, nombre, institucion);
+    }
 
-	public final UUID getId() {
-		return id;
-	}
+    public static MateriaEntity build() {
+        return new MateriaEntity();
+    }
 
-	public final MateriaEntity setId(final UUID id) {
-		this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
-		return this;
-	}
+    public UUID getId() {
+        return id;
+    }
 
-	public final String getNombre() {
-		return nombre;
-	}
+    public MateriaEntity setId(UUID id) {
+        this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
+        return this;
+    }
 
-	public final MateriaEntity setNombre(final String nombre) {
-		this.nombre = TextHelper.applyTrim(nombre);
-		return this;
-	}
-	
-	public final String getInstitucion() {
-		return institucion;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public final MateriaEntity setInstitucion(final String institucion) {
-		this.institucion = TextHelper.applyTrim(institucion);
-		return this;
-	}
+    public MateriaEntity setNombre(String nombre) {
+        this.nombre = TextHelper.applyTrim(nombre);
+        return this;
+    }
+
+    public String getInstitucion() {
+        return institucion;
+    }
+
+    public MateriaEntity setInstitucion(String institucion) {
+        this.institucion = TextHelper.applyTrim(institucion);
+        return this;
+    }
 }
