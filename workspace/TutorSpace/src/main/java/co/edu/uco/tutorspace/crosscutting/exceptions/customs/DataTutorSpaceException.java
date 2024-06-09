@@ -12,11 +12,11 @@ public class DataTutorSpaceException extends TutorSpaceException {
 		super(mensajeUsuario, lugar );
 	}
 	
-	public DataTutorSpaceException(final String mensajeUsuario,final String mensajeTecnico) {
+	public DataTutorSpaceException(final String mensajeUsuario, final String mensajeTecnico) {
 		super(mensajeTecnico, mensajeUsuario, lugar);
 	}
 	
-	public DataTutorSpaceException(final String mensajeTecnico,final String mensajeUsuario, final Throwable exceptionRaiz) {
+	public DataTutorSpaceException(final String mensajeTecnico, final String mensajeUsuario, final Throwable exceptionRaiz) {
 		super(mensajeTecnico,mensajeUsuario, lugar, exceptionRaiz);
 	}
 }
