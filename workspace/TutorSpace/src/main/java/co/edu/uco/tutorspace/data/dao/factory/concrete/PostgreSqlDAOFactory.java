@@ -7,20 +7,22 @@ import co.edu.uco.tutorspace.crosscutting.exceptions.customs.DataTutorSpaceExcep
 import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.MessageCatalogStrategy;
 import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.data.CodigoMensaje;
 import co.edu.uco.tutorspace.crosscutting.helpers.SqlHelper;
+import co.edu.uco.tutorspace.data.dao.entity.UsuarioDAO;
 import co.edu.uco.tutorspace.data.dao.entity.MateriaDAO;
-import co.edu.uco.tutorspace.data.dao.entity.concrete.SqlConnection;
-import co.edu.uco.tutorspace.data.dao.entity.concrete.postgresql.MateriaPostgreSqlDAO;
 import co.edu.uco.tutorspace.data.dao.factory.DAOFactory;
+import co.edu.uco.tutorspace.data.dao.entity.concrete.postgresql.UsuarioPostgreSqlDAO;
+import co.edu.uco.tutorspace.data.dao.entity.concrete.postgresql.MateriaPostgreSqlDAO;
+import co.edu.uco.tutorspace.data.dao.entity.concrete.SqlConnection;
 
-public class PostgreSqlDAOFactory extends SqlConnection implements DAOFactory {
+public final class PostgreSqlDAOFactory extends SqlConnection implements DAOFactory {
 
-	public PostgreSqlDAOFactory() {
+    public PostgreSqlDAOFactory() {
         super();
         abrirConexion();
     }
 
     private void abrirConexion() {
-        final String connectionUrl = "jdbc:postgresql://localhost:5432/Zbanky?user=postgres&password=653200";
+        final String connectionUrl = "jdbc:postgresql://localhost:5432/YourDatabaseName?user=postgres&password=YourPassword";
         try {
             setConexion(DriverManager.getConnection(connectionUrl));
         } catch (final SQLException excepcion) {
@@ -35,7 +37,6 @@ public class PostgreSqlDAOFactory extends SqlConnection implements DAOFactory {
             throw new DataTutorSpaceException(mensajeTecnico, mensajeUsuario, excepcion);
         }
     }
-
 
     @Override
     public void cerrarConexion() {
@@ -58,7 +59,12 @@ public class PostgreSqlDAOFactory extends SqlConnection implements DAOFactory {
     }
 
     @Override
+    public UsuarioDAO getUsuarioDAO() {
+        return new UsuarioPostgreSqlDAO(getConexion());
+    }
+
+    @Override
     public MateriaDAO getMateriaDAO() {
         return new MateriaPostgreSqlDAO(getConexion());
-    }
+    }   
 }
