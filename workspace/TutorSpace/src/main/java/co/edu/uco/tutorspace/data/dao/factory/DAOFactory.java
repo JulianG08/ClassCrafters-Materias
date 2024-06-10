@@ -1,6 +1,7 @@
 package co.edu.uco.tutorspace.data.dao.factory;
 
 import co.edu.uco.tutorspace.data.dao.entity.MateriaDAO;
+import co.edu.uco.tutorspace.data.dao.entity.UsuarioDAO;
 import co.edu.uco.tutorspace.data.dao.factory.concrete.PostgreSqlDAOFactory;
 
 public interface DAOFactory {
@@ -18,4 +19,6 @@ public interface DAOFactory {
     void cancelarTransaccion();
 
     MateriaDAO getMateriaDAO();
+    
+    UsuarioDAO getUsuarioDAO();
 }
