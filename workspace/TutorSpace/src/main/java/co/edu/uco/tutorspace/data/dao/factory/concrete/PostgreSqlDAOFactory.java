@@ -8,6 +8,7 @@ import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.MessageCatal
 import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.data.CodigoMensaje;
 import co.edu.uco.tutorspace.crosscutting.helpers.SqlHelper;
 import co.edu.uco.tutorspace.data.dao.entity.MateriaDAO;
+import co.edu.uco.tutorspace.data.dao.entity.UsuarioDAO;
 import co.edu.uco.tutorspace.data.dao.entity.concrete.SqlConnection;
 import co.edu.uco.tutorspace.data.dao.entity.concrete.postgresql.MateriaPostgreSqlDAO;
 import co.edu.uco.tutorspace.data.dao.factory.DAOFactory;
@@ -60,5 +61,10 @@ public class PostgreSqlDAOFactory extends SqlConnection implements DAOFactory {
     @Override
     public MateriaDAO getMateriaDAO() {
         return new MateriaPostgreSqlDAO(getConexion());
+    }
+    
+    @Override
+    public UsuarioDAO getUsuarioDAO() {
+        return new UsuarioPostgreSqlDAO(getConexion());
     }
 }
