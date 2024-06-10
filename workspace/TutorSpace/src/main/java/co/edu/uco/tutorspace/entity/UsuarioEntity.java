@@ -47,7 +47,7 @@ public final class UsuarioEntity {
         setInstitucion(institucion);
     }
 
-    public static UsuarioEntity build() {
+    public static final UsuarioEntity build() {
         return new UsuarioEntity();
     }
 

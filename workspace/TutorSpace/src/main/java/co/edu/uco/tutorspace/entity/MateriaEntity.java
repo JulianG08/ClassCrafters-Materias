@@ -23,7 +23,7 @@ public final class MateriaEntity {
         setInstitucion(institucion);
     }
 
-    public MateriaEntity build() {
+    public static final MateriaEntity build() {
         return new MateriaEntity();
     }
 
