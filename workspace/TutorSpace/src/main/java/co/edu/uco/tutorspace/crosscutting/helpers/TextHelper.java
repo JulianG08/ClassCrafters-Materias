@@ -78,12 +78,12 @@ public final class TextHelper {
         return getDefaultValue(valor).matches(PATTERN_NUMEROS);
     }
 
-    public static boolean validarClave(String contraseña) {
-        boolean contieneMayuscula = !contraseña.equals(contraseña.toLowerCase());
-        boolean contieneMinuscula = !contraseña.equals(contraseña.toUpperCase());
-        boolean contieneNumero = contraseña.matches(".*\\d.*");
+    public static boolean validarClave(String contrasena) {
+        boolean contieneMayuscula = !contrasena.equals(contrasena.toLowerCase());
+        boolean contieneMinuscula = !contrasena.equals(contrasena.toUpperCase());
+        boolean contieneNumero = contrasena.matches(".*\\d.*");
         Pattern patronCaracterEspecial = Pattern.compile("[!@#$%^&*()\\[\\]{};:,.<>?]");
-        boolean contieneCaracterEspecial = patronCaracterEspecial.matcher(contraseña).find();
+        boolean contieneCaracterEspecial = patronCaracterEspecial.matcher(contrasena).find();
         return contieneMayuscula && contieneMinuscula && contieneNumero && contieneCaracterEspecial;
     }
 }
