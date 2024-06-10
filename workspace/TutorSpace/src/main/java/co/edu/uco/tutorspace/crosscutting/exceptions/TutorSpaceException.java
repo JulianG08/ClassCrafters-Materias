@@ -6,7 +6,7 @@ import co.edu.uco.tutorspace.crosscutting.helpers.TextHelper;
 
 public class TutorSpaceException extends RuntimeException {
 
-	private static final long serialVersionUID=1L;
+	private static final long serialVersionUID = 1L;
     protected String mensajeUsuario;
     protected Lugar lugar;
 
@@ -34,7 +34,6 @@ public class TutorSpaceException extends RuntimeException {
 
     private final void setLugar(final Lugar lugar) {
         this.lugar = ObjectHelper.getObjectHelper().getDefaultValue(lugar, Lugar.DEFAULT);
-
     }
 
     public final String getMensajeUsuario() {
