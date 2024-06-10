@@ -14,9 +14,9 @@ import co.edu.uco.tutorspace.data.dao.entity.concrete.postgresql.UsuarioPostgreS
 import co.edu.uco.tutorspace.data.dao.entity.concrete.postgresql.MateriaPostgreSqlDAO;
 import co.edu.uco.tutorspace.data.dao.entity.concrete.SqlConnection;
 
-public final class PostgreSqlDAOFactory extends SqlConnection implements DAOFactory {
+public final class PostgreSQLDAOFactory extends SqlConnection implements DAOFactory {
 
-    public PostgreSqlDAOFactory() {
+    public PostgreSQLDAOFactory() {
         super();
         abrirConexion();
     }
@@ -66,5 +66,7 @@ public final class PostgreSqlDAOFactory extends SqlConnection implements DAOFact
     @Override
     public MateriaDAO getMateriaDAO() {
         return new MateriaPostgreSqlDAO(getConexion());
-    }   
+    }
+
+
 }
