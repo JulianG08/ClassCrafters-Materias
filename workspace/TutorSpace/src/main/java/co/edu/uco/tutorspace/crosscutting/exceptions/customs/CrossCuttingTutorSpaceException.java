@@ -12,12 +12,11 @@ public class CrossCuttingTutorSpaceException extends TutorSpaceException {
 		super(mensajeUsuario, lugar);
 	}
 	
-	public CrossCuttingTutorSpaceException(final String mensajeTecnico,final String mensajeUsuario) {
-		super(mensajeTecnico,mensajeUsuario,lugar);
+	public CrossCuttingTutorSpaceException(final String mensajeTecnico, final String mensajeUsuario) {
+		super(mensajeTecnico, mensajeUsuario, lugar);
 	}
 	
-	public CrossCuttingTutorSpaceException(final String mensajeTecnico,final String mensajeUsuario,
-			final Throwable exceptionRaiz) {
-		super(mensajeTecnico,mensajeUsuario, lugar, exceptionRaiz);
+	public CrossCuttingTutorSpaceException(final String mensajeTecnico, final String mensajeUsuario, final Throwable exceptionRaiz) {
+		super(mensajeTecnico, mensajeUsuario, lugar, exceptionRaiz);
 	}
 }
