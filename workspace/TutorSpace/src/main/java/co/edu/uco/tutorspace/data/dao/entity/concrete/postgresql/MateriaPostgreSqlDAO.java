@@ -82,7 +82,8 @@ public class MateriaPostgreSqlDAO extends SqlConnection implements MateriaDAO {
 
             try (final ResultSet resultado = sentenciaSqlPreparada.executeQuery()) {
                 while (resultado.next()) {
-                    MateriaEntity materia = new MateriaEntity().build()
+                    new MateriaEntity();
+					MateriaEntity materia = MateriaEntity.build()
                         .setId(UUID.fromString(resultado.getString("id")))
                         .setNombre(resultado.getString("nombre"))
                         .setInstitucion(resultado.getString("institucion"));
