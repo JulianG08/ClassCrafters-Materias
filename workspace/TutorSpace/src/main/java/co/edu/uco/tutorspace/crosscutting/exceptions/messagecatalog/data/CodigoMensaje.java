@@ -141,8 +141,6 @@ public enum CodigoMensaje {
     }
 
     public String getIdentificador() {
-        return concatenate(getTipo().name(), UNDERLINE,
-                getCategoria().name(), UNDERLINE,
-                getCodigo());
+        return concatenate(getTipo().name(), UNDERLINE, getCategoria().name(), UNDERLINE, getCodigo());
     }
 }
