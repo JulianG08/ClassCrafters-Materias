@@ -27,29 +27,29 @@ public final class MateriaEntity {
         return new MateriaEntity();
     }
 
-    public UUID getId() {
+    public final UUID getId() {
         return id;
     }
 
-    public MateriaEntity setId(UUID id) {
+    public final MateriaEntity setId(UUID id) {
         this.id = UUIDHelper.getDefault(id, UUIDHelper.getDefault());
         return this;
     }
 
-    public String getNombre() {
+    public final String getNombre() {
         return nombre;
     }
 
-    public MateriaEntity setNombre(String nombre) {
+    public final MateriaEntity setNombre(String nombre) {
         this.nombre = TextHelper.applyTrim(nombre);
         return this;
     }
 
-    public String getInstitucion() {
+    public final String getInstitucion() {
         return institucion;
     }
 
-    public MateriaEntity setInstitucion(String institucion) {
+    public final MateriaEntity setInstitucion(String institucion) {
         this.institucion = TextHelper.applyTrim(institucion);
         return this;
     }
