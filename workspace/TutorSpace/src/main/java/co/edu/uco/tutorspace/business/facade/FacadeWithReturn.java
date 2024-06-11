@@ -1,6 +1,5 @@
 package co.edu.uco.tutorspace.business.facade;
 
-public interface FacadeWithReturn <T, K> {
-
-	K execute(T dto);
+public interface FacadeWithReturn<T, R> {
+    R execute(T dto);
 }
