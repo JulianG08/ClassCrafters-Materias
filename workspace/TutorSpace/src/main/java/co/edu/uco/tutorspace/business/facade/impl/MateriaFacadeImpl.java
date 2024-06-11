@@ -1,8 +1,8 @@
 package co.edu.uco.tutorspace.business.facade.impl;
 
-import co.edu.uco.tutorspace.business.assembler.impl.MateriaAssembler;
+import co.edu.uco.tutorspace.business.assembler.dto.MateriaAssembler;
 import co.edu.uco.tutorspace.business.domain.MateriaDomain;
-import co.edu.uco.tutorspace.business.facade.MateriaFacade;
+import co.edu.uco.tutorspace.business.facade.FacadeWithOutReturn;
 import co.edu.uco.tutorspace.crosscutting.exceptions.TutorSpaceException;
 import co.edu.uco.tutorspace.crosscutting.exceptions.enums.Lugar;
 import co.edu.uco.tutorspace.crosscutting.helpers.TextHelper;
@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MateriaFacadeImpl implements MateriaFacade {
+public class MateriaFacadeImpl implements FacadeWithOutReturn {
 
     private final MateriaDAO materiaDAO;
 
