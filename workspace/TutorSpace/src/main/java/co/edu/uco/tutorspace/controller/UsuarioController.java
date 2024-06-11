@@ -9,73 +9,73 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.edu.uco.tutorspace.business.facade.impl.materia.ConsultarMateriasFacade;
-import co.edu.uco.tutorspace.business.facade.impl.materia.RegistrarMateriaFacade;
-import co.edu.uco.tutorspace.controller.response.MateriaResponse;
+import co.edu.uco.tutorspace.business.facade.impl.usuario.ConsultarUsuariosFacade;
+import co.edu.uco.tutorspace.business.facade.impl.usuario.RegistrarUsuarioFacade;
+import co.edu.uco.tutorspace.controller.response.UsuarioResponse;
 import co.edu.uco.tutorspace.crosscutting.exceptions.TutorSpaceException;
 import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.MessageCatalogStrategy;
 import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.data.CodigoMensaje;
-import co.edu.uco.tutorspace.dto.MateriaDTO;
+import co.edu.uco.tutorspace.dto.UsuarioDTO;
 
 @RestController
 @RequestMapping("/tutorspace")
 @CrossOrigin(origins = "http://localhost:3000")
-public final class MateriaController {
+public class UsuarioController {
 
-	@GetMapping("/materias")
-    public ResponseEntity<MateriaResponse> consultar(){
+	@GetMapping("/usuarios")
+    public ResponseEntity<UsuarioResponse> consultar(){
 
         var httpStatusCode = HttpStatus.ACCEPTED;
-        var materiaResponse = new MateriaResponse();
+        var usuarioResponse = new UsuarioResponse();
 
         try {
-            var materiaDto = MateriaDTO.build();
-            var facade = new ConsultarMateriasFacade();
+            var usuarioDto = UsuarioDTO.build();
+            var facade = new ConsultarUsuariosFacade();
 
-            materiaResponse.setDatos(facade.execute(materiaDto));
+            usuarioResponse.setDatos(facade.execute(usuarioDto));
             var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00059);
-            materiaResponse.getMensajes().add(mensajeUsuario);
+            usuarioResponse.getMensajes().add(mensajeUsuario);
 
         } catch (final TutorSpaceException exception){
             httpStatusCode = HttpStatus.BAD_REQUEST;
-            materiaResponse.getMensajes().add(exception.getMensajeUsuario());
+            usuarioResponse.getMensajes().add(exception.getMensajeUsuario());
             exception.printStackTrace();
 
-        } catch (final Exception exception){
+        }catch (final Exception exception){
             httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
             var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00045);
-            materiaResponse.getMensajes().add(mensajeUsuario);
+            usuarioResponse.getMensajes().add(mensajeUsuario);
 
             exception.printStackTrace();
         }
-        return new ResponseEntity<>(materiaResponse, httpStatusCode);
+        return new ResponseEntity<>(usuarioResponse, httpStatusCode);
     }
 
-    @PostMapping("/crearmateria")
-    public ResponseEntity<MateriaResponse> registrar(@RequestBody MateriaDTO materia) {
+    @PostMapping("/crearusuario")
+    public ResponseEntity<UsuarioResponse> registrar(@RequestBody UsuarioDTO usuario) {
 
         var httpStatusCode = HttpStatus.ACCEPTED;
-        var materiaResponse = new MateriaResponse();
+        var usuarioResponse = new UsuarioResponse();
 
         try {
-            var facade = new RegistrarMateriaFacade();
-            facade.execute(materia);
+            var facade = new RegistrarUsuarioFacade();
+            facade.execute(usuario);
             var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00061);
-            materiaResponse.getMensajes().add(mensajeUsuario);
+            usuarioResponse.getMensajes().add(mensajeUsuario);
 
         } catch (final TutorSpaceException excepcion) {
             httpStatusCode = HttpStatus.BAD_REQUEST;
-            materiaResponse.getMensajes().add(excepcion.getMensajeUsuario());
+            usuarioResponse.getMensajes().add(excepcion.getMensajeUsuario());
             excepcion.printStackTrace();
         } catch (final Exception excepcion) {
             httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR;
 
             var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00057);
-            materiaResponse.getMensajes().add(mensajeUsuario);
+            usuarioResponse.getMensajes().add(mensajeUsuario);
 
             excepcion.printStackTrace();
         }
 
-        return new ResponseEntity<>(materiaResponse, httpStatusCode);
+        return new ResponseEntity<>(usuarioResponse, httpStatusCode);
     }
 }
