@@ -39,7 +39,7 @@ public final class MessageCatalogBase implements MessageCatalog {
         mensajes.put(CodigoMensaje.M00019.getIdentificador(), new Mensaje(CodigoMensaje.M00019, "Se ha presentado un problema INESPERADO tratando de cancelar una transacción SQL con la fuente de información deseada"));
         mensajes.put(CodigoMensaje.M00020.getIdentificador(), new Mensaje(CodigoMensaje.M00020, "Se ha intentado iniciar una transacción con una conexión SQL cerrada"));
         mensajes.put(CodigoMensaje.M00021.getIdentificador(), new Mensaje(CodigoMensaje.M00021, "Se ha presentado un problema tratando de iniciar una transacción SQL con la fuente de información deseada"));
-        mensajes.put(CodigoMensaje.M00023.getIdentificador(), new Mensaje(CodigoMensaje.M00022, "Se ha presentado un problema INESPERADO tratando de iniciar una transacción SQL con la fuente de información deseada"));
+        mensajes.put(CodigoMensaje.M00022.getIdentificador(), new Mensaje(CodigoMensaje.M00022, "Se ha presentado un problema INESPERADO tratando de iniciar una transacción SQL con la fuente de información deseada"));
     }
 
     @Override
