@@ -85,10 +85,10 @@ public class MessageCatalogExternalService implements MessageCatalog {
                 "Se ha presentado un problema tratando de llevar la consulta de los perfiles"));
 
         mensajes.put((CodigoMensaje.M00045.getIdentificador()), new Mensaje(CodigoMensaje.M00045,
-                "El DAOFactory de consultar los perfiles llego nulo..."));
+                "Se ha producido un error al intentar consultar las materias. Por favor, intente nuevamente o contacte al soporte técnico."));
 
         mensajes.put((CodigoMensaje.M00046.getIdentificador()), new Mensaje(CodigoMensaje.M00046,
-                "Se ha presentado un problema tratando de llevar la consulta de las divisas"));
+                "Error al consultar las materias debido a un problema con la fábrica de datos. Verifique la conexión a la base de datos y otros recursos necesarios."));
 
         mensajes.put((CodigoMensaje.M00047.getIdentificador()), new Mensaje(CodigoMensaje.M00047,
                 "El DAOFactory de consultar las divisas llego nulo..."));
@@ -103,16 +103,16 @@ public class MessageCatalogExternalService implements MessageCatalog {
                 "Se ha presentado un problema consultar la informacion de los perfiles"));
 
         mensajes.put((CodigoMensaje.M00051.getIdentificador()), new Mensaje(CodigoMensaje.M00051,
-                "Se ha presentado un problema INESPERADO tratando de consultar los perfiles"));
+                "Se ha producido un error inesperado al consultar las materias. Por favor, intente nuevamente o contacte al soporte técnico."));
 
         mensajes.put((CodigoMensaje.M00052.getIdentificador()), new Mensaje(CodigoMensaje.M00052,
-                "Se ha presentado un problema tratando de registrar la información"));
+                "Error inesperado al ejecutar el caso de uso 'ConsultarMaterias'. "));
 
         mensajes.put((CodigoMensaje.M00053.getIdentificador()), new Mensaje(CodigoMensaje.M00053,
-                "Se ha presentado un problema INESPERADO tratando de registrar la información"));
+                "Se ha producido un error inesperado al registrar la materia. Por favor, intente nuevamente o contacte al soporte técnico."));
 
         mensajes.put((CodigoMensaje.M00054.getIdentificador()), new Mensaje(CodigoMensaje.M00054,
-                "Se ha presentado un problema consultar la informacion de los tipos de documentos"));
+                "Error inesperado al ejecutar el caso de uso 'RegistrarMateria'"));
 
         mensajes.put((CodigoMensaje.M00055.getIdentificador()), new Mensaje(CodigoMensaje.M00055,
                 "Se ha presentado un problema INESPERADO tratando de consultar los tiposDocumentos"));
@@ -121,65 +121,65 @@ public class MessageCatalogExternalService implements MessageCatalog {
                 "Se ha presentado un problema tratando de registar el nuevo Perfil"));
 
         mensajes.put((CodigoMensaje.M00057.getIdentificador()), new Mensaje(CodigoMensaje.M00057,
-                "Divisas consultadas exitosamente..."));
+                "Se ha producido un error al intentar registrar. Por favor, intente nuevamente o contacte al soporte técnico."));
 
         mensajes.put((CodigoMensaje.M00058.getIdentificador()), new Mensaje(CodigoMensaje.M00058,
                 "Perfiles consultados exitosamente..."));
 
         mensajes.put((CodigoMensaje.M00059.getIdentificador()), new Mensaje(CodigoMensaje.M00059,
-                "Tipos de documento consultados exitosamente..."));
+                "Materias consultadas exitosamente."));
 
         mensajes.put((CodigoMensaje.M00060.getIdentificador()), new Mensaje(CodigoMensaje.M00060,
                 "Perfil registrado exitosamente..."));
 
         mensajes.put((CodigoMensaje.M00061.getIdentificador()), new Mensaje(CodigoMensaje.M00061,
-                "El DAO Factory para registrar el perfil llegó nulo"));
+                "Materia registrada exitosamente"));
 
         mensajes.put((CodigoMensaje.M00062.getIdentificador()), new Mensaje(CodigoMensaje.M00062,
-                "No puede ser nulo"));
+                "Se ha producido un error en el servidor. Por favor, intente nuevamente o contacte al soporte técnico."));
 
         mensajes.put((CodigoMensaje.M00063.getIdentificador()), new Mensaje(CodigoMensaje.M00063,
-                "El nombre debe contener solo letras..."));
+                "El campo no puede estar vacío. Por favor, ingrese un valor."));
 
         mensajes.put((CodigoMensaje.M00064.getIdentificador()), new Mensaje(CodigoMensaje.M00064,
-                "Debe tener entre 1 y 20 caracteres..."));
+                "El campo solo debe contener letras. Por favor, ingrese un valor válido."));
 
         mensajes.put((CodigoMensaje.M00065.getIdentificador()), new Mensaje(CodigoMensaje.M00065,
-                "El nombre de usuario debe contener solo letras y números..."));
+                "La longitud del campo no es válida. Por favor, ingrese un valor entre {min} y {max} caracteres"));
 
         mensajes.put((CodigoMensaje.M00066.getIdentificador()), new Mensaje(CodigoMensaje.M00066,
-                "El nombre de usuario debe tener entre 1 y 25 caracteres.."));
+                "El tipo de usuario solo debe contener letras. Por favor, ingrese un valor válido."));
 
         mensajes.put((CodigoMensaje.M00067.getIdentificador()), new Mensaje(CodigoMensaje.M00067,
-                "La contraseña debe contener como minimo entre 8 y 30 caracteres..."));
+                "La longitud del tipo de usuario no es válida. Por favor, ingrese un valor entre {min} y {max} caracteres."));
 
         mensajes.put((CodigoMensaje.M00068.getIdentificador()), new Mensaje(CodigoMensaje.M00068,
-                "La contraseña debe contener como minimo un número , una letra mayúscula, una minuscula y un caracter especial..."));
+                "La longitud de la clave no es válida. Por favor, ingrese un valor entre {min} y {max} caracteres."));
 
         mensajes.put((CodigoMensaje.M00069.getIdentificador()), new Mensaje(CodigoMensaje.M00069,
-                "El correo electrónico no tiene un formato válido"));
+                "La contraseña debe contener como minimo un número , una letra mayúscula, una minuscula y un caracter especial..."));
 
         mensajes.put((CodigoMensaje.M00070.getIdentificador()), new Mensaje(CodigoMensaje.M00070,
-                "El correo debe tener entre 6 y 256 caracteres"));
+                "El formato del correo electrónico no es válido. Por favor, ingrese un correo electrónico válido."));
 
         mensajes.put((CodigoMensaje.M00071.getIdentificador()), new Mensaje(CodigoMensaje.M00071,
-                "Ya existe un perfil con el mismo nombre de usuario..."));
+                "La longitud del correo electrónico no es válida. Por favor, ingrese un valor entre {min} y {max} caracteres."));
 
         mensajes.put((CodigoMensaje.M00072.getIdentificador()), new Mensaje(CodigoMensaje.M00072,
-                "Ya existe un peril con el mismo correo electrónico asociado..."));
+                "Ya existe una materia con el mismo nombre. Por favor, elija un nombre diferente"));
 
         mensajes.put((CodigoMensaje.M00073.getIdentificador()), new Mensaje(CodigoMensaje.M00073,
-                "Ya existe un peril con el mismo número de documento..."));
+                "Ya existe un usuario con el mismo correo electrónico. Por favor, ingrese un correo electrónico diferente"));
 
         mensajes.put((CodigoMensaje.M00074.getIdentificador()), new Mensaje(CodigoMensaje.M00074,
-                "Los datos proporcionados, no cumplen con los requisitos (tipo de dato, obligaoriedad, longitud, formato y rango)..."));
+                "Ya existe un usuario con el mismo número de documento. Por favor, ingrese un número de documento diferente"));
 
         mensajes.put((CodigoMensaje.M00075.getIdentificador()), new Mensaje(CodigoMensaje.M00075,
-                "El nombre de usuario que se ingresó, es unico de cada perfil, por lo tanto ya se encuentra registrado en la base de datos."));
+                "Error de validación en los campos del usuario. Por favor, revise los detalles y reintente"));
 
 
         mensajes.put((CodigoMensaje.M00076.getIdentificador()), new Mensaje(CodigoMensaje.M00076,
-                "El tipo de documento con el que tratas de registrarte no existe en el sistema "));
+                "Error al intentar registrar una materia con un nombre duplicado. Verifique que el nombre de la materia sea único en la base de datos. "));
 
         mensajes.put((CodigoMensaje.M00077.getIdentificador()), new Mensaje(CodigoMensaje.M00077,
                 "El tipo documento seleccionado no se encuentra almacenado en la base de datos, verifica con el administrador del sistema"));
@@ -196,13 +196,13 @@ public class MessageCatalogExternalService implements MessageCatalog {
                 "El correo que se ingresó, es unico de cada perfil, por lo tanto ya se encuentra registrado en la base de datos."));
 
         mensajes.put((CodigoMensaje.M00081.getIdentificador()), new Mensaje(CodigoMensaje.M00081,
-                "El numero de documento que se ingresó, es unico de cada perfil, por lo tanto ya se encuentra registrado en la base de datos."));
+                "Ya existe un usuario con el mismo correo electrónico en la base de datos."));
 
         mensajes.put((CodigoMensaje.M00082.getIdentificador()), new Mensaje(CodigoMensaje.M00082,
-                "El apellido debe contener solo letras..."));
+                "Ya existe un usuario con el mismo número de documento en la base de datos"));
 
         mensajes.put((CodigoMensaje.M00083.getIdentificador()), new Mensaje(CodigoMensaje.M00083,
-                "La divisa y el tipo de documento que tratas de registrar no existen en el sistema"));
+                "El campo solo debe contener letras. Por favor, ingrese un valor válido."));
 
 
         mensajes.put((CodigoMensaje.M00084.getIdentificador()), new Mensaje(CodigoMensaje.M00084,
@@ -212,13 +212,16 @@ public class MessageCatalogExternalService implements MessageCatalog {
                 "El número de documento debe contener solo numeros."));
 
         mensajes.put((CodigoMensaje.M00086.getIdentificador()), new Mensaje(CodigoMensaje.M00086,
-                "El número de documento ingresado esta violando el tipo de dato long"));
+                "El número de documento solo debe contener dígitos. Por favor, ingrese un valor válido"));
 
         mensajes.put((CodigoMensaje.M00087.getIdentificador()), new Mensaje(CodigoMensaje.M00087,
-                "El número de documento debe tener entre 1 y 10 caracteres."));
+                "El número de documento ingresado contiene caracteres no válidos."));
 
         mensajes.put((CodigoMensaje.M00088.getIdentificador()), new Mensaje(CodigoMensaje.M00088,
-                "Los datos proporcionados, no cumplen con los requisitos de rango del atributo \""));
+                "La longitud del número de documento no es válida. Por favor, ingrese un valor entre {min} y {max} caracteres."));
+        
+        mensajes.put((CodigoMensaje.M00089.getIdentificador()), new Mensaje(CodigoMensaje.M00089,
+                "La longitud del número de documento ingresado no cumple con los requisitos mínimos o máximos."));
     }
 
     @Override
