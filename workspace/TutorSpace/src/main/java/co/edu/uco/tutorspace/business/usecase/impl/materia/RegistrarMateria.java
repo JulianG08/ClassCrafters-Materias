@@ -33,7 +33,7 @@ public class RegistrarMateria implements UseCaseWithOutReturn<MateriaDomain> {
         validarNombre(data.getNombre());
         validarMateriaMismoNombre(data.getNombre());
 
-        var materiaEntity = MateriaEntity.build().setId(generarIdentificadorPerfil()).setNombre(data.getNombre()).setInstitucion(data.getInstitucion());
+        var materiaEntity = MateriaEntity.build().setId(generarIdentificadorMateria()).setNombre(data.getNombre()).setInstitucion(data.getInstitucion());
 
         factory.getMateriaDAO().crear(materiaEntity);
     }
@@ -56,7 +56,7 @@ public class RegistrarMateria implements UseCaseWithOutReturn<MateriaDomain> {
         }
     }
 
-    private final UUID generarIdentificadorPerfil() {
+    private final UUID generarIdentificadorMateria() {
         UUID id = UUIDHelper.generate();
         boolean existeId = true;
 

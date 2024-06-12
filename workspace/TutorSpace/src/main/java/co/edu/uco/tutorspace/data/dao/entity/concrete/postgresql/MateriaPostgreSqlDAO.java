@@ -53,8 +53,8 @@ public class MateriaPostgreSqlDAO extends SqlConnection implements MateriaDAO {
     @Override
     public List<MateriaEntity> consultar (MateriaEntity data) {
         final StringBuilder sentenciaSql = new StringBuilder();
-        sentenciaSql.append("SELECT m.id, m.nombre, m.institucion")
-                .append("FROM Materia m")
+        sentenciaSql.append("SELECT m.id, m.nombre, m.institucion ")
+                .append("FROM Materia m ")
                 .append("WHERE 1=1 ");
 
         final List<Object> parametros = new ArrayList<>();
@@ -82,7 +82,6 @@ public class MateriaPostgreSqlDAO extends SqlConnection implements MateriaDAO {
 
             try (final ResultSet resultado = sentenciaSqlPreparada.executeQuery()) {
                 while (resultado.next()) {
-                    new MateriaEntity();
 					MateriaEntity materia = MateriaEntity.build()
                         .setId(UUID.fromString(resultado.getString("id")))
                         .setNombre(resultado.getString("nombre"))
