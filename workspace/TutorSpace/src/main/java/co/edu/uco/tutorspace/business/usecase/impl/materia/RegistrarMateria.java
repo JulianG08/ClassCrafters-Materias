@@ -49,7 +49,7 @@ public class RegistrarMateria implements UseCaseWithOutReturn<MateriaDomain> {
             var mensajeTecnico = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00075);
             throw new BusinessTutorSpaceException(mensajeTecnico, mensajeUsuario);
         }
-        if (!validarLongitudAtributo(nombre, 1, 20)) {
+        if (!validarLongitudAtributo(nombre, 1, 50)) {
             var mensajeUsuario = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00065);
             var mensajeTecnico = MessageCatalogStrategy.getContenidoMensaje(CodigoMensaje.M00075);
             throw new BusinessTutorSpaceException(mensajeTecnico, mensajeUsuario);
