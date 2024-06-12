@@ -18,8 +18,8 @@ import co.edu.uco.tutorspace.crosscutting.exceptions.messagecatalog.data.CodigoM
 import co.edu.uco.tutorspace.dto.UsuarioDTO;
 
 @RestController
-@RequestMapping("/tutorspace")
-@CrossOrigin(origins = "http://localhost:3000")
+@RequestMapping("/usuario")
+@CrossOrigin(origins = "http://localhost:8080")
 public class UsuarioController {
 
 	@GetMapping("/usuarios")
